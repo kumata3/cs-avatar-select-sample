@@ -119,28 +119,14 @@ namespace MyTestApp{
                 }
                 this.poppedAvatarNum = 0;
             }
-            int limit = 0;
             int foundAvatarIndex = -1;
-            while(limit < (avatarPatternNum * 2))
+            while(true)
             {
                 int avatarIndex = this.rnd.Next(avatarPatternNum);
                 if(!this.usedAvatar[avatarIndex])
                 {
                     foundAvatarIndex = avatarIndex;
                     break;
-                }
-            }
-            if(foundAvatarIndex == -1)
-            {
-                // 運悪くランダム抽選で見つからなかった時は
-                // 最初に見つけた使ってないものを選択する
-                for(int avatarIndex = 0; avatarIndex < avatarPatternNum; avatarIndex ++)
-                {
-                    if(!this.usedAvatar[avatarIndex])
-                    {
-                        foundAvatarIndex = avatarIndex;
-                        break;
-                    }
                 }
             }
             // あり得ないケース
